@@ -1,0 +1,24 @@
+* ProductAPI
+Public Endpoint
+ -> [GET] Api/Products/GetAll
+
+Private Endpoint
+ -> [GET] Api/Products/CheckProductAvailability/{id}
+
+* OrderAPI
+Public Endpoint
+ -> [POST] Api/Orders/PlaceOrder
+
+Worker Queue
+ -> [OUT] Insert to OrderHistoryWorker
+
+* OrderHistoryAPI
+Public Endpoint
+ -> [GET] Api/OrderHistories/GetAllHistories
+
+Worker Queue
+ -> [IN] Waiting for order api to send the successfull order
+
+
+
+ by: Mirza G. Rasyid aka MirzaEvolution
